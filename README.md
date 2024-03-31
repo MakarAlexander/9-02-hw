@@ -67,10 +67,10 @@ DBPassword=password
 ```
 7. Запускаю процессы Zabbix сервера и агента и настраиваю их запуск при загрузке ОС:
 ```bash
-systemctl restart zabbix-server zabbix-agent apache2
+systemctl restart zabbix-server apache2
 ```
 ```bash
-systemctl enable zabbix-server zabbix-agent apache2
+systemctl enable zabbix-server apache2
 ```
 ![1-1](./9-2-1.png)
 ---
