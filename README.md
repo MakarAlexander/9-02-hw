@@ -92,6 +92,36 @@ systemctl enable zabbix-server apache2
 3. Приложите в файл README.md скриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.
 4. Приложите в файл README.md текст использованных команд в GitHub
 
+#### Решение
+1. Устанавливаю репозиторий Zabbix на оба хоста:
+```bash
+wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-4+debian11_all.deb
+```
+```bash
+dpkg -i zabbix-release_6.0-4+debian11_all.deb
+```
+```bash
+sudo apt update
+```
+2. Устанавливаю Zabbix-agent на оба хоста:
+```bash
+sudo apt install zabbix-agent
+```
+3. Добавляю адрес zabbix-server в zabbix_agentd.conf на обоих хостах:
+```bash
+sudo nano /etc/zabbix/zabbix_agentd.conf
+```
+4. Рестарт и автозапуск Zabbix-agent на обоих хостах:
+```bash
+sudo systemctl restart zabbix-agent
+```
+```bash
+sudo systemctl enable zabbix-agent
+```
+![2-1](./9-2-2.png)
+![2-2](./9-2-3.png)
+![2-3](./9-2-4.png)
+
 ---
 ## Задание 3 со звёздочкой*
 Установите Zabbix Agent на Windows (компьютер) и подключите его к серверу Zabbix.
