@@ -98,7 +98,7 @@ systemctl enable zabbix-server apache2
 wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-4+debian11_all.deb
 ```
 ```bash
-dpkg -i zabbix-release_6.0-4+debian11_all.deb
+sudo dpkg -i zabbix-release_6.0-4+debian11_all.deb
 ```
 ```bash
 sudo apt update
